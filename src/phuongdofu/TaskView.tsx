@@ -1,8 +1,9 @@
-import TaskViewCenter from './components/ViewCenter';
+// import TaskViewCenter from './components/CenterView';
+import RightView from './components/RightView';
 
 export default function TaskView() {
 
     return (
-        <TaskViewCenter />
+        <RightView />
     )
 };

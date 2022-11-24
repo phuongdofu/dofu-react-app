@@ -6,9 +6,10 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { TabsProps } from 'types/e-commerce';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
+
+import Instruction from 'phuongdofu/section/Instruction';
+import DeskTimeline from 'phuongdofu/section/Timeline';
+
 
 function TabPanel({ children, value, index, ...other }: TabsProps) {
 
@@ -42,37 +43,8 @@ function a11yProps(index: number) {
   };
 }
 
-const Instruction = () => {
-    const steps = [
-        'ToDo',
-        'Doing',
-        'On Hold',
-        'Done'
-      ];
-    
-    return (
-        <Box>
-        
-        <Box sx={{ width: '100%', paddingBottom: "10px" }}>
-        <Stepper activeStep={2} alternativeLabel>
-            {steps.map((label) => (
-            <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-            </Step>
-            ))}
-        </Stepper>
-        </Box>                                                                                                      
 
-        <Box sx={{p: 2, border: "#d9d9d9 solid 1px",}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis magna urna.
-        </Box>
-
-        </Box>
-        
-    );
-}
-
-export default function TaskViewCenter() {
+export default function TaskCenterView() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
@@ -93,7 +65,7 @@ export default function TaskViewCenter() {
         <Instruction />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <DeskTimeline />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
