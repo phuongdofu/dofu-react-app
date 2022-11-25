@@ -27,7 +27,7 @@ function SelectCustomers() {
     ]
 
     return (
-        <Stack spacing={3} sx={{ width: 430 }}>
+        <Stack spacing={3} sx={{ width: 400 }}>
             <Autocomplete
             multiple
             id="tags-standard"
@@ -54,7 +54,7 @@ export default function Customers() {
     ]
 
     return (
-        <MainCard title="Customers" content={false}>
+        <MainCard title="Customers" content={false} sx={{ width: 450 }}>
             <SimpleBar>
             <CardContent>
                 {customersRowData.map(item => (

@@ -3,16 +3,15 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Chip from '@mui/material/Chip';
+import ClearIcon from '@mui/icons-material/Clear';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-import ClearIcon from '@mui/icons-material/Clear';
-
-function SelectProduct() {
-    const productAutocomplete = [
-        { id: 1, name: "Hanbiro Project", tag: "Software" },
-        { id: 2, name: "HR", tag: "Software" },
+function SelectKnowledge() {
+    const knowledgeAutocomplete = [
+        { id: 1, knowledge: "How to change language?", tag: "Groupware" },
+        { id: 2, knowledge: "How to set working time for all users?", tag: "HR" },
     ]
 
     return (
@@ -20,14 +19,14 @@ function SelectProduct() {
             <Autocomplete
             multiple
             id="tags-standard"
-            options={productAutocomplete}
-            getOptionLabel={(option) => option.name}
-            defaultValue={[productAutocomplete[0]]}
+            options={knowledgeAutocomplete}
+            getOptionLabel={(option) => option.knowledge}
+            defaultValue={[knowledgeAutocomplete[0]]}
             renderInput={(params) => (
             <TextField
                 {...params}
                 variant="standard"
-                placeholder="Type or click to select product"
+                placeholder="Type or click to select knowledge base"
             />
             )}
             />
@@ -35,18 +34,19 @@ function SelectProduct() {
     )
 }
 
-const Product = () => {
-    const productRowsData = [
-        { id: 1, name: "Groupware", tag: "Software" },
+const KnowledgeBase = () => {
+    const knowledgeRowsData = [
+        { id: 1, knowledge: "How to access admin page?", tag: "postmaster" },
+        { id: 2, knowledge: "How to add an user?", tag: "postmaster" },
     ]
 
     return (
         <Box sx={{ flexGrow: 1, width: 430 }}>
-            {productRowsData.map(item => (
+            {knowledgeRowsData.map(item => (
             <Grid container spacing={2} sx={{ marginBottom: "3px" }}>
                 <Grid item xs={6} sx={{ marginTop: "4px" }}>
                     <Link href="#" underline="none">
-                        { item.name }
+                        { item.knowledge }
                     </Link>
                 </Grid>
                 <Grid item xs={6} >
@@ -57,9 +57,9 @@ const Product = () => {
                 </Grid> 
             </Grid>
             ))}
-            <Box sx={{ paddingTop: "5px"}}><SelectProduct /></Box>
+            <Box sx={{ paddingTop: "5px"}}><SelectKnowledge /></Box>
         </Box>
     )
 };
 
-export default Product;
+export default KnowledgeBase;
